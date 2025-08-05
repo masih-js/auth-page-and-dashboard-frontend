@@ -1,0 +1,27 @@
+@use "../../styles/variables" as vars;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: vars.$spacing-3 vars.$spacing-5;
+  font-size: vars.$font-size-md;
+  font-weight: 600;
+  color: vars.$color-on-primary;
+  background-color: vars.$color-primary;
+  border: none;
+  border-radius: vars.$radius-md;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    opacity 0.2s;
+
+  &:hover:not(:disabled) {
+    background-color: vars.$color-primary-variant;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

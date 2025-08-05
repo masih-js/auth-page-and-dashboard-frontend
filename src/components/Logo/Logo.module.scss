@@ -1,0 +1,12 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Ensure the image scales responsively if you override width/height in CSS */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
