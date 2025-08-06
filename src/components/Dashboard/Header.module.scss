@@ -1,0 +1,77 @@
+@use "../../styles/variables" as vars;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: vars.$spacing-3 vars.$spacing-4;
+  background-color: vars.$color-surface;
+  border-bottom: 1px solid vars.$gray-200;
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  padding: vars.$spacing-2;
+  cursor: pointer;
+  color: vars.$gray-700;
+
+  /* only show on mobile */
+  display: block;
+  @include vars.respond(md) {
+    display: none;
+  }
+}
+
+.logoLink {
+  margin-left: vars.$spacing-2;
+}
+
+.navLinks {
+  display: none;
+  gap: vars.$spacing-6;
+
+  @include vars.respond(md) {
+    display: flex;
+  }
+
+  a {
+    font-size: vars.$font-size-md;
+    color: vars.$color-on-surface;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logoutButton {
+  margin-left: vars.$spacing-3;
+  padding: vars.$spacing-2 vars.$spacing-3;
+  font-size: vars.$font-size-sm;
+  background: none;
+  border: 1px solid vars.$gray-300;
+  border-radius: vars.$radius-lg;
+  color: vars.$color-error;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+
+  &:hover {
+    background-color: vars.$gray-100;
+    color: vars.$color-primary;
+  }
+}

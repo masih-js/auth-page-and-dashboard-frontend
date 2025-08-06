@@ -1,0 +1,27 @@
+@use "../../styles/variables" as vars;
+
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; // full viewport height
+  background-color: vars.$color-bg;
+}
+
+.mainContent {
+  flex: 1; // take up remaining space under header
+  padding: vars.$spacing-6 vars.$spacing-4;
+  overflow-y: auto; // scroll if content is tall
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: vars.$spacing-4;
+
+  // @include respond(md) {
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
+  // @include respond(lg) {
+  //   grid-template-columns: repeat(4, 1fr);
+  // }
+}
