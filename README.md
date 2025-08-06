@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Auth Dashboard
+
+A small Next.js App Router project with a simple authentication flow and dashboard.
+
+## Features
+
+- Phone number login (Iranian mobile numbers: `09XXXXXXXXX`)
+- Fetch random user data from `randomuser.me` API
+- Persistent auth state with Jotai (`atomWithStorage`)
+- Form validation with React Hook Form + Zod
+- Reusable `<Input>` and `<Button>` components
+- Protected `/dashboard` route via `AuthGuard`
+
+## Tech Stack
+
+- Next.js (App Router) + TypeScript
+- SCSS Modules & global styles (`globals.scss`)
+- Jotai for state management
+- React Hook Form + Zod for form handling & validation
+- Native `fetch` for API calls
+
+## Prerequisites
+
+- Node.js v18+
+- pnpm, npm, or yarn
+- Docker (optional)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/masih-js/auth-page-and-dashboard-frontend.git
+cd auth-page-and-dashboard-frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file in the project root:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# .env.local
+NEXT_PUBLIC_API_URL=https://randomuser.me/api/?results=1&nat=us
+```
 
-## Learn More
+## Running with Docker
 
-To learn more about Next.js, take a look at the following resources:
+1. **Build the Docker image**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   docker build -t nextjs-auth-dashboard .
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Run the container**
 
-## Deploy on Vercel
+   ```bash
+   docker run -d -p 3000:3000 --name auth-dashboard nextjs-auth-dashboard
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Open in your browser**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   Navigate to [http://localhost:3000/auth](http://localhost:3000/auth)
+
+## Running Locally (without Docker)
+
+1. **Install dependencies**
+
+   ```bash
+   pnpm install   # or yarn install / npm install
+   ```
+
+2. **Run in development mode**
+
+   ```bash
+   pnpm dev       # or yarn dev / npm run dev
+   ```
+
+3. **Access the app**
+
+   Open [http://localhost:3000/auth](http://localhost:3000/auth) in your browser.

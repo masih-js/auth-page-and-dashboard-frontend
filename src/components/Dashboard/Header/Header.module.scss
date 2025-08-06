@@ -32,27 +32,10 @@
   margin-left: vars.$spacing-2;
 }
 
-.navLinks {
+.desktopNav {
   display: none;
-  gap: vars.$spacing-6;
-
   @include vars.respond(md) {
-    display: flex;
-  }
-
-  a {
-    font-size: vars.$font-size-md;
-    color: vars.$color-on-surface;
-    text-decoration: none;
-
-    &.activeLink {
-      font-weight: 600;
-      border-bottom: 2px solid vars.$color-primary;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
+    display: block;
   }
 }
 

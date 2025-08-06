@@ -2,20 +2,21 @@
 
 import React from "react";
 import styles from "./Header.module.scss";
-import { MenuButton } from "@/components/Dashboard";
-import { LogoLink } from "@/components/Dashboard";
-import { NavLinks } from "@/components/Dashboard";
-import { UserProfile } from "@/components/Dashboard";
+import { LogoLink, NavLinks, UserProfile } from "@/components/Dashboard";
+import MobileMenu from "@/components/Dashboard/MobileMenu/MobileMenu";
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.left}>
-        <MenuButton />
+        <MobileMenu />
         <LogoLink />
       </div>
 
-      <NavLinks />
+      {/* desktop nav only */}
+      <div className={styles.desktopNav}>
+        <NavLinks />
+      </div>
 
       <div className={styles.right}>
         <UserProfile />

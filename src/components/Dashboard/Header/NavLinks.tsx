@@ -4,13 +4,16 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_LINKS } from "@/config/navLinks";
-import styles from "./Header.module.scss";
+import styles from "./NavLinks.module.scss"; // move to its own module
 
-export default function NavLinks() {
+interface NavLinksProps {
+  className?: string;
+}
+export default function NavLinks({ className = "" }: NavLinksProps) {
   const pathname = usePathname();
 
   return (
-    <nav className={styles.navLinks}>
+    <nav className={`${styles.navLinks} ${className}`}>
       {NAV_LINKS.map(({ label, href }) => {
         const isActive = pathname === href;
         return (

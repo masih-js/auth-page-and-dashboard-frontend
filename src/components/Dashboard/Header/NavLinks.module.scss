@@ -1,0 +1,39 @@
+// components/Dashboard/NavLinks.module.scss
+@use "../../../styles/variables" as vars;
+
+.navLinks {
+  /* mobile-first: stack vertically with small gap */
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-4;
+
+  @include vars.respond(md) {
+    /* desktop: switch to horizontal row with larger gap */
+    flex-direction: row;
+    gap: vars.$spacing-6;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: vars.$color-on-surface;
+
+    &.activeLink {
+      font-weight: 600;
+      border-bottom: 2px solid vars.$color-primary;
+    }
+  }
+}
+
+.horizontal {
+  @include vars.respond(md) {
+    display: flex;
+    gap: vars.$spacing-6;
+  }
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-4;
+}
