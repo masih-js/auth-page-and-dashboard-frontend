@@ -1,0 +1,65 @@
+@use "../../../styles/variables" as vars;
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: vars.$z-modal-backdrop;
+}
+
+.modal {
+  background-color: vars.$color-surface;
+  padding: vars.$spacing-6;
+  border-radius: vars.$radius-lg;
+  max-width: 90%;
+  width: 320px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  margin: 0 0 vars.$spacing-3;
+  font-size: vars.$font-size-xl;
+  font-weight: 600;
+}
+
+.description {
+  margin-bottom: vars.$spacing-4;
+  font-size: vars.$font-size-md;
+  color: vars.$gray-700;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: vars.$spacing-3;
+}
+
+.cancelButton,
+.confirmButton {
+  padding: vars.$spacing-2 vars.$spacing-4;
+  font-size: vars.$font-size-sm;
+  border-radius: vars.$radius-md;
+  cursor: pointer;
+  border: none;
+}
+
+.cancelButton {
+  background-color: vars.$gray-200;
+  &:hover {
+    background-color: vars.$gray-300;
+  }
+}
+
+.confirmButton {
+  background-color: vars.$color-primary;
+  color: vars.$color-on-primary;
+  &:hover {
+    background-color: vars.$color-primary-variant;
+  }
+}

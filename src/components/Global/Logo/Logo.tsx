@@ -5,15 +5,10 @@ import Image, { StaticImageData } from "next/image";
 import styles from "./Logo.module.scss";
 
 export interface LogoProps {
-  /** Path or URL to the image */
   src: string | StaticImageData;
-  /** Intrinsic width */
   width: number;
-  /** Intrinsic height */
   height: number;
-  /** Alt text for accessibility */
   alt?: string;
-  /** Additional class for custom styling */
   className?: string;
 }
 
@@ -25,7 +20,7 @@ const Logo = forwardRef<HTMLSpanElement, LogoProps>(
         width={width}
         height={height}
         alt={alt}
-        unoptimized={typeof src === "string"} // if remote URL, skip optimization
+        unoptimized={typeof src === "string"}
       />
     </span>
   ),

@@ -3,25 +3,41 @@
 .dashboardContainer {
   display: flex;
   flex-direction: column;
-  height: 100vh; // full viewport height
+  height: 100vh;
   background-color: vars.$color-bg;
 }
 
 .mainContent {
-  flex: 1; // take up remaining space under header
+  flex: 1;
   padding: vars.$spacing-6 vars.$spacing-4;
-  overflow-y: auto; // scroll if content is tall
+  overflow-y: auto;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: vars.$spacing-4;
+}
 
-  // @include respond(md) {
-  //   grid-template-columns: repeat(2, 1fr);
-  // }
-  // @include respond(lg) {
-  //   grid-template-columns: repeat(4, 1fr);
-  // }
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: vars.$spacing-6;
+  background-color: vars.$color-bg;
+  text-align: center;
+}
+
+.heading {
+  font-size: vars.$font-size-3xl;
+  font-weight: 600;
+  margin-bottom: vars.$spacing-2;
+  color: vars.$color-on-surface;
+}
+
+.subheading {
+  font-size: vars.$font-size-lg;
+  color: vars.$gray-700;
 }

@@ -1,5 +1,3 @@
-// app/auth/auth.module.scss
-
 @use "../../styles/variables" as vars;
 
 .container {
@@ -32,16 +30,15 @@
   color: vars.$color-on-surface;
 }
 
-/* ←─── PULL THESE OUT OF .footer ───→ */
 .form {
   display: flex;
   flex-direction: column;
   gap: vars.$spacing-4;
-  background-color: vars.$color-surface; // keep it on-brand
+  background-color: vars.$color-surface;
 }
 .input {
   font-size: vars.$font-size-md;
-  border-radius: vars.$radius-xl; // <–– swap in XL here
+  border-radius: vars.$radius-xl;
   transition: border-color 0.2s;
 
   &:focus {
@@ -85,7 +82,6 @@
   padding: vars.$spacing-3 0;
 }
 
-/* ←─── YOUR FOOTER LINK STYLES ───→ */
 .footer {
   margin-top: vars.$spacing-6;
   font-size: vars.$font-size-sm;

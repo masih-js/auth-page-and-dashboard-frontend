@@ -1,4 +1,3 @@
-// hooks/useAuth.ts
 "use client";
 
 import { useAtom } from "jotai";
@@ -11,11 +10,6 @@ export function useAuth() {
   const [user, setUser] = useAtom(authUserAtom);
   const router = useRouter();
 
-  /**
-   * Logs in by fetching a random user, persisting it,
-   * then sending you to /dashboard.
-   * @param phone The validated phone number (not used in fetch)
-   */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const login = async (_phone: string): Promise<RandomUser> => {
     const fetchedUser = await fetchRandomUser();
@@ -24,9 +18,6 @@ export function useAuth() {
     return fetchedUser;
   };
 
-  /**
-   * Clears out the stored user and sends you back to /auth.
-   */
   const logout = () => {
     setUser(null);
     router.push("/auth");

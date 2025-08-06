@@ -1,4 +1,4 @@
-@use "../../styles/variables" as vars;
+@use "../../../styles/variables" as vars;
 
 .header {
   display: flex;
@@ -22,7 +22,6 @@
   cursor: pointer;
   color: vars.$gray-700;
 
-  /* only show on mobile */
   display: block;
   @include vars.respond(md) {
     display: none;
@@ -46,17 +45,46 @@
     color: vars.$color-on-surface;
     text-decoration: none;
 
+    &.activeLink {
+      font-weight: 600;
+      border-bottom: 2px solid vars.$color-primary;
+    }
+
     &:hover {
       text-decoration: underline;
     }
   }
 }
 
-.avatar {
-  border-radius: 50%;
-  object-fit: cover;
+.userProfile {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+
+  .avatarPlaceholder {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: vars.$gray-200;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .avatar {
+    border-radius: 50%;
+  }
 }
 
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .logoutButton {
   margin-left: vars.$spacing-3;
   padding: vars.$spacing-2 vars.$spacing-3;

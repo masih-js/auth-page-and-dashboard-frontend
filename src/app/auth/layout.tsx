@@ -1,7 +1,6 @@
-// app/auth/layout.tsx
 import React from "react";
 import styles from "./auth.module.scss";
-import GuestGuard from "@/components/Global/GuestGuard/GuestGuard";
+import { GuestGuard } from "@/components/Global";
 
 export const metadata = {
   title: "Sign In",

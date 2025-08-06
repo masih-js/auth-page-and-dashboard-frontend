@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Logo from "@/components/Global/Logo/Logo";
+import { Logo } from "@/components/Global";
 import AuthForm from "@/components/AuthComponents/AuthForm";
 import styles from "./auth.module.scss";
 
